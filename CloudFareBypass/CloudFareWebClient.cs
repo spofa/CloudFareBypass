@@ -81,8 +81,7 @@ namespace CloudFareBypass
                         BaseWebClient.QueryString.Add(value.Name, WebUtility.UrlEncode(value.Value));
                     }
 
-                    //5 seconds is too fast for some sites
-                    Thread.Sleep(6000);
+                    Thread.Sleep(3000);
 
                     string siteResponse = BaseWebClient.DownloadString(solveChallengeAddress);
 
