@@ -13,7 +13,7 @@ using System.Web;
 
 namespace CloudFareBypass
 {
-    public class CloudFareWebClient
+    public class CloudFareWebClient : IDisposable
     {
         public WebClientEx BaseWebClient { get; private set; }
         public string UserAgent { get; set; }
@@ -110,5 +110,10 @@ namespace CloudFareBypass
         }
 
         #endregion
+
+        public void Dispose()
+        {
+            BaseWebClient.Dispose();
+        }
     }
 }
